@@ -67,7 +67,7 @@ jobs:
         with:
           tf_actions_version: ${{ env.TF_VERSION }}
           tf_actions_subcommand: workspace new
-          args: {{env.WORKSPACE}}
+          args: $WORKSPACE
         env:
           AWS_SHARED_CREDENTIALS_FILE: .aws/credentials
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
