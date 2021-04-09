@@ -61,6 +61,16 @@ jobs:
       - name: TF_WORKSPACE
         run: 'echo "$WORKSPACE"'
 
+      - name: Create workspace
+        uses: rewindio/terraform-github-actions@main
+        with:
+          tf_actions_version: ${{ env.TF_VERSION }}
+          tf_actions_subcommand: workspace
+          args: new {{env.WORKSPACE}}
+        env:
+          AWS_SHARED_CREDENTIALS_FILE: .aws/credentials
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Terraform Init
         uses: rewindio/terraform-github-actions@main
         with:
