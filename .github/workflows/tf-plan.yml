@@ -61,6 +61,7 @@ jobs:
       - name: TF_WORKSPACE
         run: 'echo "$WORKSPACE"'
 
+
       - name: Create workspace
         uses: rewindio/terraform-github-actions@main
         with:
