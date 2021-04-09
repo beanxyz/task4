@@ -65,8 +65,8 @@ jobs:
         uses: rewindio/terraform-github-actions@main
         with:
           tf_actions_version: ${{ env.TF_VERSION }}
-          tf_actions_subcommand: workspace
-          args: new {{env.WORKSPACE}}
+          tf_actions_subcommand: workspace new
+          args: {{env.WORKSPACE}}
         env:
           AWS_SHARED_CREDENTIALS_FILE: .aws/credentials
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
