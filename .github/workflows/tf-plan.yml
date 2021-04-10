@@ -18,6 +18,8 @@ jobs:
 
     env:
       WORKSPACE: ${{ matrix.workspace }}
+      AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID_STAGING}}
+      AWS_SECRET_ACCESS_KEY: ${{secret.AWS_SECRET_ACCESS_KEY_STAGING}}
 
     steps:
       - name: Generate tfvars Path
@@ -56,7 +58,8 @@ jobs:
         run: 'cat .aws/credentials'
 
       - name: Terraform Init
-        run: terraform init -backend-config="backend/backend.tfvars" 
+        run: terraform init -backend-config="backend/backend.tfvars"
+
 
       - name: Terraform Format
 
