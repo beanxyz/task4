@@ -56,7 +56,7 @@ jobs:
         run: 'cat .aws/credentials'
 
       - name: Terraform Init
-        run: terraform init -backend-config="backend/backend.tfvars" -profile="staging"
+        run: terraform init -backend-config="backend/backend.tfvars" 
 
       - name: Terraform Format
 
