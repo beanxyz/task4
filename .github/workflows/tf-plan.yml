@@ -56,7 +56,7 @@ jobs:
         run: 'ls -la'
 
       - name: Terraform Init
-        run: terraform init -backend-config="path=backend/backend.tfvars"
+        run: terraform init -backend-config="backend/backend.tfvars"
 
       - name: Terraform Format
 
