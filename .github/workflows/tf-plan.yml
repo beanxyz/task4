@@ -1,8 +1,6 @@
 name: terraform-plan
-
 on: push
-  branches:
-    - dev
+
 
 env:
   TF_VERSION: 0.14
