@@ -19,7 +19,7 @@ jobs:
     env:
       WORKSPACE: ${{ matrix.workspace }}
       AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID_STAGING}}
-      AWS_SECRET_ACCESS_KEY: ${{secret.AWS_SECRET_ACCESS_KEY_STAGING}}
+      AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY_STAGING}}
 
     steps:
       - name: Generate tfvars Path
