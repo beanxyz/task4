@@ -10,8 +10,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        workspace: [st-test-results-bucket_ap-southeast-2,
-        pd-test-results-bucket_ap-southeast-2]
+        workspace: [st-test-results-bucket_ap-southeast-2]
+        # pd-test-results-bucket_ap-southeast-2]
 
     name: ${{ matrix.workspace }}
     runs-on: ubuntu-latest
