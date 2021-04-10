@@ -54,11 +54,10 @@ jobs:
       - uses: hashicorp/setup-terraform@v1
 
       - name: display content
-        run: 'cat .aws/credentials'
+        run: 'ls -la'
 
       - name: Terraform Init
         run: terraform init
-
 
       - name: Terraform Format
 
