@@ -51,14 +51,14 @@ jobs:
           echo "aws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY_PRODUCTION }}" >> .aws/credentials
 
       - name: Terraform Format
-        use: hashicorp/setup-terraform@v1
+        uses: hashicorp/setup-terraform@v1
         run: terraform fmt
 
 
       - name: Terraform validate
-        use: hashicorp/setup-terraform@v1
+        uses: hashicorp/setup-terraform@v1
         run: terraform validate
 
       - name: Terraform plan
-        use: hashicorp/setup-terraform@v1
+        uses: hashicorp/setup-terraform@v1
         run: terraform plan
