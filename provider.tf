@@ -1,6 +1,6 @@
 provider "aws" {
 
-  profile = var.aws_profile
+  # profile = var.aws_profile
   # access_key = TAF_VAR_AWS_ACCESS_KEY_ID
   # secret_key = TAF_VAR_AWS_SECRET_ACCESS_KEY
   region = "ap-southeast-2"

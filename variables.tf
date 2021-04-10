@@ -1,4 +1,4 @@
-
+#
 variable "instance-type" {
   type = string
   #default = "t3.micro"
@@ -11,38 +11,38 @@ variable "external_ip" {
   #default = "0.0.0.0/0"
 
 }
-
 #
-# These vars come from a backend.tfvars file (not in this repo)
-# Make sure you pass -var-file backend.tfsvars when planning
-variable "bucket" {
-}
+# #
+# # These vars come from a backend.tfvars file (not in this repo)
+# # Make sure you pass -var-file backend.tfsvars when planning
+# variable "bucket" {
+# }
 
-variable "key" {
-}
-
-variable "workspace_key_prefix" {
-}
-
-# used for state locking
-variable "dynamodb_table" {
-}
-
-variable "region" {
-}
-
-# Aws credentials profile
-variable "profile" {
-}
-
-variable "external_ip_allow_list" {
-}
-
+# variable "key" {
+# }
 #
-# These vars come from an environment specific tfvars file under tfvars/
-variable "aws_profile" {
-}
+# variable "workspace_key_prefix" {
+# }
+#
+# # used for state locking
+# variable "dynamodb_table" {
+# }
+#
+# variable "region" {
+# }
+#
+# # Aws credentials profile
+# variable "profile" {
+# }
 
+# variable "external_ip_allow_list" {
+# }
+#
+# #
+# # These vars come from an environment specific tfvars file under tfvars/
+# variable "aws_profile" {
+# }
+#
 variable "test_results_bucket_name" {
 }
 
