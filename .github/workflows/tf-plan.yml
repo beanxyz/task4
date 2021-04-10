@@ -66,8 +66,8 @@ jobs:
         uses: hashicorp/terraform-github-actions@master
         with:
           tf_actions_version: ${{ env.TF_VERSION }}
-          tf_actions_subcommand: workspace
-          args: new $WORKSPACE
+          tf_actions_subcommand: 'workspace new'
+          args: $WORKSPACE
         env:
           AWS_SHARED_CREDENTIALS_FILE: .aws/credentials
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
