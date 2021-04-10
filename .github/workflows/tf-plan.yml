@@ -73,7 +73,7 @@ jobs:
       - name: Terraform plan
         id: plan
         if: github.event_name == 'push'
-        run: terraform plan -var-file="${{ steps.tfvars.outputs.tfvars_file }}" -no-color
+        run: terraform plan -var-file=${{ steps.tfvars.outputs.tfvars_file }}
         continue-on-error: true
 
       - name: Terraform plan status
