@@ -3,8 +3,7 @@ name: terraform-plan
 on: push
 
 env:
-  TF_VERSION: 0.12.20
-
+  TF_VERSION: 0.14
 jobs:
   terraform-plan:
     strategy:
@@ -58,7 +57,7 @@ jobs:
         run: 'cat .aws/credentials'
 
       - name: Terraform Init
-        run: terraform init 
+        run: terraform init
 
 
       - name: Terraform Format
