@@ -53,8 +53,7 @@ jobs:
       - uses: hashicorp/setup-terraform@v1
 
       - name: display content
-        run: |
-        'cat .aws/credentials'
+        run: 'cat .aws/credentials'
 
       - name: Terraform Init
         run: terraform init -backend-config="backend/backend.tfvars"
