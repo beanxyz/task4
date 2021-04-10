@@ -27,21 +27,21 @@ terraform {
   }
 }
 
-resource "aws_s3_bucket" "test_results" {
-  bucket = var.test_results_bucket_name
-  acl    = "private"
-
-  server_side_encryption_configuration {
-    rule {
-      apply_server_side_encryption_by_default {
-        sse_algorithm = "AES256"
-      }
-    }
-  }
-
-  tags = {
-    product     = "common"
-    platform    = "common"
-    bucket_name = var.test_results_bucket_name
-  }
-}
+# resource "aws_s3_bucket" "test_results" {
+#   bucket = var.test_results_bucket_name
+#   acl    = "private"
+#
+#   server_side_encryption_configuration {
+#     rule {
+#       apply_server_side_encryption_by_default {
+#         sse_algorithm = "AES256"
+#       }
+#     }
+#   }
+#
+#   tags = {
+#     product     = "common"
+#     platform    = "common"
+#     bucket_name = var.test_results_bucket_name
+#   }
+# }
