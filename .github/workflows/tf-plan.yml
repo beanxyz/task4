@@ -53,7 +53,7 @@ jobs:
 
       - uses: hashicorp/setup-terraform@v1
 
-      - name: display content
+      - name: display contents
         run: 'ls -la'
 
       - name: Terraform Init
