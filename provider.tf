@@ -1,6 +1,6 @@
 provider "aws" {
 
-  #profile = var.aws_profile
+  # profile = var.aws_profile
   access_key = secrets.AWS_ACCESS_KEY_ID_STAGING
   secret_key = secrets.AWS_SECRET_ACCESS_KEY_STAGING
   region = "ap-southeast-2"
@@ -17,6 +17,14 @@ provider "aws" {
 # which is not in this repo
 terraform {
   backend "s3" {
+    bucket               = "yuan-terraform-backend"
+    key                  = "terraform.tfstate"
+    workspace_key_prefix = "terraform-workspaces"
+    dynamodb_table       = "s3-state-lock"
+    region               = "ap-southeast-2"
+    # profile              = "staging"
+   access_key = secrets.AWS_ACCESS_KEY_ID_STAGING
+   secret_key = secrets.AWS_SECRET_ACCESS_KEY_STAGING
   }
 }
 
