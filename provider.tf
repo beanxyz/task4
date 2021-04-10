@@ -1,8 +1,8 @@
 provider "aws" {
 
   #profile = var.aws_profile
-  access_key = TF_VAR_AWS_ACCESS_KEY_ID_STAGING
-  secret_key = TF_VAR_AWS_SECRET_ACCESS_KEY_STAGING
+  access_key = AWS_ACCESS_KEY_ID_STAGING
+  secret_key = AWS_SECRET_ACCESS_KEY_STAGING
   region = "ap-southeast-2"
 }
 
@@ -23,8 +23,8 @@ terraform {
     dynamodb_table       = "s3-state-lock"
     region               = "ap-southeast-2"
     #profile              = "staging"
-    #access_key = secrets.AWS_ACCESS_KEY_ID_STAGING
-    #secret_key = secrets.AWS_SECRET_ACCESS_KEY_STAGING
+    access_key = AWS_ACCESS_KEY_ID_STAGING
+    secret_key = AWS_SECRET_ACCESS_KEY_STAGING
   }
 }
 
