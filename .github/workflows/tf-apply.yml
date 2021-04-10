@@ -1,8 +1,7 @@
-name: terraform-plan
+name: terraform-apply
 
-on: push
-  branches:
-    - dev
+on: pull_request
+
 
 env:
   TF_VERSION: 0.14
@@ -77,3 +76,7 @@ jobs:
       - name: Terraform plan status
         if: steps.plan.outcome == 'failure'
         run: exit 1
+
+      - name: Terraform Apply
+        # if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: terraform apply -var-file=${{ steps.tfvars.outputs.tfvars_file }} -auto-approve
