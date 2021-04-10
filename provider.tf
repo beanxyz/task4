@@ -1,8 +1,8 @@
 provider "aws" {
 
   profile = var.aws_profile
-  #access_key = secrets.AWS_ACCESS_KEY_ID_STAGING
-  #secret_key = secrets.AWS_SECRET_ACCESS_KEY_STAGING
+  access_key = secrets.AWS_ACCESS_KEY_ID_STAGING
+  secret_key = secrets.AWS_SECRET_ACCESS_KEY_STAGING
   region = "ap-southeast-2"
 }
 
