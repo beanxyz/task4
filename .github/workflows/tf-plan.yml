@@ -36,36 +36,34 @@ jobs:
         uses: actions/checkout@1.0.0
 
 
-      - name: Setup AWS Credentials
-        run: |
-          # Setup the credentials in the workspace because everything in terraform is
-          # driven off profiles
-          mkdir -p .aws
-
-          echo "[staging]" > .aws/credentials
-          echo "aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID_STAGING }}" >> .aws/credentials
-          echo "aws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY_STAGING }}" >> .aws/credentials
-
-          # Production is needed because all of the TF state is stored in prod S3
-          echo "[production]" >> .aws/credentials
-          echo "aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID_PRODUCTION }}" >> .aws/credentials
-          echo "aws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY_PRODUCTION }}" >> .aws/credentials
+      # - name: Setup AWS Credentials
+      #   run: |
+      #     # Setup the credentials in the workspace because everything in terraform is
+      #     # driven off profiles
+      #     mkdir -p .aws
+      #
+      #     echo "[staging]" > .aws/credentials
+      #     echo "aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID_STAGING }}" >> .aws/credentials
+      #     echo "aws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY_STAGING }}" >> .aws/credentials
+      #
+      #     # Production is needed because all of the TF state is stored in prod S3
+      #     echo "[production]" >> .aws/credentials
+      #     echo "aws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID_PRODUCTION }}" >> .aws/credentials
+      #     echo "aws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY_PRODUCTION }}" >> .aws/credentials
 
       - uses: hashicorp/setup-terraform@v1
 
-      - name: display contents
-        run: 'ls -la'
+      # - name: display contents
+      #   run: 'ls -la'
 
       - name: Terraform Init
         run: terraform init
 
       - name: Terraform Format
-
         run: terraform fmt
 
 
       - name: Terraform validate
-
         run: terraform validate
 
       - name: Terraform plan
