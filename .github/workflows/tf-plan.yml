@@ -52,11 +52,8 @@ jobs:
 
       - uses: hashicorp/setup-terraform@v1
 
-      - name: Terraform create workspace
-        run: terraform workspace new ${WORKSPACE}
-
       - name: Terraform Init
-        run: terraform init
+        run: terraform init -backend-config="backend\backend.tfvars"
 
       - name: Terraform Format
 
