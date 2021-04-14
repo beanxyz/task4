@@ -1,14 +1,14 @@
 #
 variable "instance-type" {
   type = string
-  #default = "t3.micro"
+  default = "t3.micro"
 }
 
 
 
 variable "external_ip" {
   type = string
-  #default = "0.0.0.0/0"
+  default = "0.0.0.0/0"
 
 }
 #
@@ -44,6 +44,7 @@ variable "external_ip" {
 # }
 #
 variable "test_results_bucket_name" {
+  default="yuan-terraform-backend"
 }
 
 
