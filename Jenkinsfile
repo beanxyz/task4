@@ -28,7 +28,7 @@ pipeline{
     }
     stage("Terraform plan"){
       steps{
-        sh 'terraform plan'
+        sh 'terraform plan ==no-color'
       }
     }
 
