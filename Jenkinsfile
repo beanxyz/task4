@@ -28,7 +28,7 @@ pipeline{
     }
     stage("Terraform plan"){
       steps{
-        sh 'terraform plan -no-color'
+        sh 'terraform plan -no-color -var-file=st-test-results-bucket_ap-southeast-2.tfvars'
       }
     }
 
