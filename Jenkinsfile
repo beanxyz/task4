@@ -27,7 +27,7 @@ pipeline{
     }
     stage("Terraform plan"){
       steps{
-        sh 'terraform plan -var-file="tfvars\\staging\\st-test-results-bucket_ap-southeast-2.tfvars"'
+        sh 'terraform plan'
       }
     }
 
