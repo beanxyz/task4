@@ -3,7 +3,7 @@ pipeline{
   stages{
    stage("Check out"){
     steps{
-      git 'https://github.com/beanxyz/task1'
+      git 'https://github.com/beanxyz/task4'
     }
 
 
