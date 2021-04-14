@@ -23,6 +23,7 @@ pipeline{
     stage("Terraform validate"){
       steps{
         sh 'terraform validate'
+        sh 'ls -la'
       }
     }
     stage("Terraform plan"){
