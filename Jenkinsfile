@@ -1,6 +1,15 @@
 pipeline{
   agent any
   stages{
+   stage("Check out"){
+    steps{
+      git 'https://github.com/beanxyz/task1'git 'https://github.com/beanxyz/task1'
+    }
+
+
+   }
+
+  
     stage("Terraform Init"){
       steps{
         sh 'terraform init'
